@@ -1,247 +1,60 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="assessmentApp">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assessment Form</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        label {
-            font-weight: bold;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .form-section {
-            margin-bottom: 20px;
-        }
-        .assessment-questions input {
-            width: 80%;
-            margin: 5px 0;
-        }
-        .signature {
-            margin-top: 30px;
-            text-align: center;
-        }
-    </style>
-</head>
-<body ng-controller="AssessmentController">
+<h1 align="center">Hey, I'm Anish Basnet 👋</h1>
 
-    <div class="container">
-        <h1>Candidate Assessment Form</h1>
-        
-        <!-- Personal Information -->
-        <div class="form-section">
-            <label>Candidate Name:</label>
-            <input type="text" ng-model="candidateName" placeholder="Enter candidate name" />
-        </div>
+<p align="center">
+  🌏 Self-taught developer from Nepal | 📱 React Native Dev | 🎯 Startup Visionary | 🇯🇵 Language Learning App Founder
+</p>
 
-        <div class="form-section">
-            <label>Date of Birth:</label>
-            <input type="date" ng-model="dob" />
-        </div>
+---
 
-        <div class="form-section">
-            <label>Gender:</label>
-            <select ng-model="gender">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
-            </select>
-        </div>
+### 👨‍💻 About Me
+- 🔭 Building **NekoNihongo**: A Gen Z Japanese learning app with anime vibes and gamified XP system
+- 📘 Running a note-sharing and educational platform called **BICTE Notes Blog** for Nepali students
+- 🚀 10+ projects in progress including language learning, voting tracker, and productivity tools
+- 🔥 On a mission to help Nepal level up through education, tech, and innovation
 
-        <div class="form-section">
-            <label>Email:</label>
-            <input type="email" ng-model="email" placeholder="Enter email" />
-        </div>
+---
 
-        <div class="form-section">
-            <label>Phone Number:</label>
-            <input type="tel" ng-model="phone" placeholder="Enter phone number" />
-        </div>
+### ⚒ Tech Stack
 
-        <!-- Qualifications -->
-        <div class="form-section">
-            <label>School +2 - Subject and GPA:</label>
-            <input type="text" ng-model="schoolSubject" placeholder="Subject" />
-            <input type="number" ng-model="schoolGPA" placeholder="GPA" />
-        </div>
+- **Languages:** JavaScript, HTML, CSS, Python, Nepali-English Bilingual Content
+- **Frameworks:** React Native, Node.js, Express.js, Tailwind CSS
+- **Database & Auth:** Firebase, MongoDB
+- **Tools:** Git, Figma, Canva, Postman, Vercel, Netlify
 
-        <div class="form-section">
-            <label>Bachelor's Degree - Subject and GPA:</label>
-            <input type="text" ng-model="bachelorSubject" placeholder="Subject" />
-            <input type="number" ng-model="bachelorGPA" placeholder="GPA" />
-        </div>
+---
 
-        <div class="form-section">
-            <label>Do you have a Degree?</label>
-            <select ng-model="degree">
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select>
-            <div ng-if="degree === 'Yes'">
-                <label>Degree Points:</label>
-                <input type="number" ng-model="degreePoints" placeholder="Enter degree points" />
-            </div>
-        </div>
+### 🚀 My Featured Projects
 
-        <!-- Evaluation Criteria -->
-        <h3>Evaluation Criteria</h3>
-        <div class="form-section" ng-repeat="(criterion, score) in evaluationCriteria">
-            <label>{{ criterion }}:</label>
-            <input type="number" ng-model="evaluationCriteria[criterion]" min="0" max="10" />
-        </div>
+| Project | Description | Tech |
+|--------|-------------|------|
+| 🐱 [NekoNihongo](https://github.com/anish34glith/neko-nihongo) | Anime-inspired Japanese learning app with gamification and NekoSensei AI | React Native, Firebase |
+| 🗳️ Election Tracker App | Visual tool to track political leaders and their progress | React, Firebase |
+| 📚 [BICTE Notes Blog](https://github.com/anish34glith/bicte-blog) | Study materials and notes for BICTE students across Nepal | HTML, CSS, JavaScript |
+| 🧠 Brain XP | Habit tracking and brain training XP system | React Native |
+| 📈 Startup Dashboard | Admin dashboard for early-stage startups | React, Tailwind |
 
-        <!-- Assessment Questions -->
-        <h3>Assessment Questions</h3>
-        <div class="assessment-questions">
-            <div ng-repeat="i in [1,2,3,4,5]">
-                <label>Question {{i}}:</label>
-                <textarea ng-model="questions[i]" placeholder="Enter your answer"></textarea>
-            </div>
-        </div>
+> 🧪 More private/internal projects available on request
 
-        <!-- Other Details -->
-        <div class="form-section">
-            <label>Position Applied:</label>
-            <input type="text" ng-model="position" placeholder="Enter position applied" />
-        </div>
+---
 
-        <div class="form-section">
-            <label>Date of Assessment:</label>
-            <input type="date" ng-model="assessmentDate" />
-        </div>
+### 🧠 Learning & Goals (2025)
 
-        <div class="form-section">
-            <label>Expected Salary:</label>
-            <input type="number" ng-model="expectedSalary" placeholder="Enter expected salary" />
-        </div>
+- Become fluent in English & Japanese 🇬🇧🇯🇵
+- Master SEO and app monetization strategies
+- Launch my first million-download app 🚀
+- Build tech companies that support education and healthcare in Nepal
 
-        <div class="form-section">
-            <label>How many years do you want to work here?</label>
-            <input type="number" ng-model="workYears" placeholder="Enter number of years" />
-        </div>
+---
 
-        <!-- Signature -->
-        <div class="signature">
-            <label>Signature:</label>
-            <input type="text" ng-model="signature" placeholder="Enter your signature" />
-        </div>
+### 🤝 Let's Connect
 
-        <!-- Submit Button -->
-        <button ng-click="generateAssessment()">Generate Assessment</button>
+- 📧 Email: your@email.com
+- 🌐 Portfolio: [yourwebsite.com]()
+- 🧑‍💻 Fiverr: [fiverr.com/yourprofile](https://fiverr.com/yourprofile)
+- 🔗 LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
 
-        <!-- Generated Assessment -->
-        <h3>Generated Assessment:</h3>
-        <pre>{{ assessment }}</pre>
-    </div>
+---
 
-    <script>
-        angular.module('assessmentApp', [])
-            .controller('AssessmentController', function($scope) {
-                $scope.candidateName = '';
-                $scope.dob = '';
-                $scope.gender = '';
-                $scope.email = '';
-                $scope.phone = '';
-                $scope.schoolSubject = '';
-                $scope.schoolGPA = '';
-                $scope.bachelorSubject = '';
-                $scope.bachelorGPA = '';
-                $scope.degree = 'No';
-                $scope.degreePoints = '';
-                $scope.evaluationCriteria = {
-                    "Technical Skills": 0,
-                    "Problem Solving": 0,
-                    "Communication": 0,
-                    "Teamwork": 0
-                };
-                $scope.questions = {};
-                $scope.position = '';
-                $scope.assessmentDate = '';
-                $scope.expectedSalary = '';
-                $scope.workYears = '';
-                $scope.signature = '';
-                $scope.assessment = '';
+> “Work hard in silence, let your Neko app go viral.” 🐱🔥
 
-                $scope.generateAssessment = function() {
-                    let assessmentTemplate = `
-Assessment Form
-----------------
-Candidate Name: ${$scope.candidateName}
-Date of Birth: ${$scope.dob}
-Gender: ${$scope.gender}
-Email: ${$scope.email}
-Phone: ${$scope.phone}
-
-Qualifications:
-----------------
-School +2 - Subject: ${$scope.schoolSubject}, GPA: ${$scope.schoolGPA}
-Bachelor's Degree - Subject: ${$scope.bachelorSubject}, GPA: ${$scope.bachelorGPA}
-Degree: ${$scope.degree} ${($scope.degree === 'Yes' ? 'Points: ' + $scope.degreePoints : '')}
-
-Evaluation Criteria:
----------------------
-`;
-
-                    for (let criterion in $scope.evaluationCriteria) {
-                        assessmentTemplate += `${criterion}: ${$scope.evaluationCriteria[criterion]}/10\n`;
-                    }
-
-                    assessmentTemplate += `
-Assessment Questions:
----------------------
-`;
-
-                    for (let i = 1; i <= 5; i++) {
-                        assessmentTemplate += `Question ${i}: ${$scope.questions[i]}\n`;
-                    }
-
-                    assessmentTemplate += `
-Position Applied: ${$scope.position}
-Date of Assessment: ${$scope.assessmentDate}
-Expected Salary: ${$scope.expectedSalary}
-Work Years: ${$scope.workYears}
-
-Signature: ${$scope.signature}
-`;
-
-                    $scope.assessment = assessmentTemplate;
-                };
-            });
-    </script>
-</body>
-</html>
 
