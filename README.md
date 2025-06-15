@@ -48,10 +48,10 @@
 
 ### 🤝 Let's Connect
 
-- 📧 Email: [Email.com/inyourprifile](Anishbas559@gmail.com)
-- 🌐 Portfolio: [portfolio.com](http://127.0.0.1:3000/index.html)
-- 🧑‍💻 Upwork: [Upwork.com/in/yourprofile](https://www.upwork.com/nx/client-info/)
-- 🔗 LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/anishbas32w)
+- 📧 Email: [Anishbas559@gmail.com](Anishbas559@gmail.com)
+- 🌐 Portfolio: [http://127.0.0.1:3000/index.html](http://127.0.0.1:3000/index.html)
+- 🧑‍💻 Upwork: [https://www.upwork.com/nx/client-info/](https://www.upwork.com/nx/client-info/)
+- 🔗 LinkedIn: [linkedin.com/in/anishbas](https://linkedin.com/in/anishbas32w)
 
 ---
 
